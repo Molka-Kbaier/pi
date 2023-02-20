@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Terrain{% endblock %}
+
+{% block body %}
+   <main style="
+           display: flex;align-items: center;
+            position: fixed;
+            left: 200px;
+            bottom: 200px;
+            width: 90%;
+            justify-content: center;
+           textarea {
+  font-family: inherit;
+  font-size: 90%;
+}
+            flex-wrap: wrap;
+            height: 250px;
+            text-align: center;">
+    <div class="row">
+        
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ajouter terrain </h5>
+
+                    <!-- General Form Elements -->
+                    
+                   {{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+                   <p>
+                        <label for="inputText" class="col-sm-4 col-form-label">numero</label>
+                        <div class="col-sm-10">
+                            {{ form_widget(form.numero,{'attr':{'class':'form-control'}}) }}
+
+                        </div>
+                    {{ form_errors(form.numero,{'attr':{'class':'text-danger'}}) }}
+
+</p>
+<p>
+                    <label for="inputText" class="col-sm-4 col-form-label">surface</label>
+                        <div class="col-sm-10">
+                            {{ form_widget(form.surface,{'attr':{'class':'form-control'}}) }}
+
+                    </div>
+                    {{ form_errors(form.surface,{'attr':{'class':'text-danger'}}) }}
+
+                  </p> 
+ <p>
+                   {{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+                        <label for="inputText" class="col-sm-4 col-form-label">lieu</label>
+                        <div class="col-sm-10">
+                            {{ form_widget(form.lieu,{'attr':{'class':'form-control'}}) }}
+
+                        </div>
+                    {{ form_errors(form.lieu,{'attr':{'class':'text-danger'}}) }}
+
+</p>
+<p>
+                   {{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+                        <label for="inputText" class="col-sm-4 col-form-label">culture</label>
+                        <div class="col-sm-10">
+                            {{ form_widget(form.culture,{'attr':{'class':'form-control'}}) }}
+
+                        </div>
+                    {{ form_errors(form.culture,{'attr':{'class':'text-danger'}}) }}
+
+</p>
+                    {{ form_end(form) }}
+
+               
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
